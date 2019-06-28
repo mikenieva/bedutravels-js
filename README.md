@@ -7,17 +7,16 @@
 - Sesión 1: Fundamentos de Programación
   
   - [Objetivos](#objetivos)
-  - [ALCANCE 0: Gestión del proyecto](#alcance-0-gesti%C3%B3n-del-proyecto)
-  - [ALCANCE 1: Diseñemos el arreglo de objetos "tours"](#alcance-1-dise%C3%B1a-el-arreglo-de-objetos-tours)
-  - [ALCANCE 2. Planteemos la estrategia técnica`](#alcance-2-crea-una-variable-de-usuario-en-indexjs)
-  - [ALCANCE 3. Generemos una función "buscarToursPorPais"](#alcance-3-crea-una-funci%C3%B3n-buscarToursPorPais)
-  - [ALCANCE 4. Probemos nuestra función "buscarToursPorPais"](#alcance-4-indica-el-nombre-del-usuario-y-cu%C3%A1ntos-tours-tiene-colombia-col)
+  - [ALCANCE 1: Planeación de la aplicación ](#alcance-1-dise%C3%B1a-el-arreglo-de-objetos-tours)
+  - [ALCANCE 2. Diseñemos el arreglo de objetos "tours"`](#alcance-2-crea-una-variable-de-usuario-en-indexjs)
+  - [ALCANCE 3. Generemos una función "searchTours"](#alcance-3-crea-una-funci%C3%B3n-buscarToursPorPais)
+  - [ALCANCE 4. Probemos nuestra función "searchTours"](#alcance-4-indica-el-nombre-del-usuario-y-cu%C3%A1ntos-tours-tiene-colombia-col)
 
 - Sesión 2: DOM
   - [ALCANCE 5: Ciclos con Git y GitHub](#alcance-0-gesti%C3%B3n-del-proyecto)
   - [ALCANCE 6: Integremos HTML con Javascript](#alcance-1-dise%C3%B1a-el-arreglo-de-objetos-tours)
   - [ALCANCE 7. Crea la barra de búsqueda con su botón](#alcance-2-crea-una-variable-de-usuario-en-indexjs)
-  - [ALCANCE 8. Integra la función buscarToursPorPais con la barra de búsqueda](#alcance-3-crea-una-funci%C3%B3n-buscarToursPorPais)
+  - [ALCANCE 8. Integra la función searchTours con la barra de búsqueda](#alcance-3-crea-una-funci%C3%B3n-buscarToursPorPais)
 
 - Sesión 3: ES6
 
@@ -61,60 +60,62 @@
 
 ## Preámbulo
 
-![Imgur](https://i.imgur.com/XHpENHF.jpg)
-
-
-
-## Preámbulo
+![Imgur](https://i.imgur.com/tHDS1of.jpg)
 
 Nuestra empresa se llama BEDU Travels.
 
-Habiendo teniendo tanto éxito en nuestras franquicias de agencias de viajes, hemos recibido una ronda de capital para comenzar nuestra expansión.
+Habiendo tenido tanto éxito en nuestras franquicias de agencias de viajes, hemos recibido una ronda de capital para comenzar nuestra expansión.
 
-Entre los retos, está la construcción de nuestra plataforma online.
+Entre los retos, está la construcción de nuestra plataforma online, la cual queda a cargo de nosotros, el equipo de desarrollo.
 
-Nuestro equipo empieza a conseguir los primeros tours para nuestra plataforma.
+Mientras tanto, el área de ventas empieza a armar los primeros tours para que se suban a nuestra plataforma, así como un listado de datos que deben también reflejarse.
 
-Por ello, con nuestro equipo de desarrollo, iniciaremos la funcionalidad sobre la búsqueda de tours a partir de la lista con la información de los tours.
+Comenzamos con el producto.
 
+
+# Sesión 1: Fundamentos de Programación
 
 ## Consideraciones técnicas
 
-- [NodeJS](https://nodejs.org)
-- [Postman](https://www.getpostman.com/)
-- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/)
-- [MongoDB Compass](https://www.mongodb.com/products/compass)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Git](https://git-scm.com/downloads)
-- [GitHub Reposity: Projects & Issues](https://help.github.com/en/articles/about-project-boards)
+Te pedimos que instales los siguientes programas:
 
+- [Visual Studio Code](https://code.visualstudio.com/). Es de los mejores editores, pero puedes usar otro si así lo deseas.
+- [Git](https://git-scm.com/downloads). Para controlar las versiones y subir nuestros cambios a GitHub.
+- [GitHub](https://github.com.com/). Crea tu cuenta en caso de que no lo hayas hecho.
 
+## Objetivos
 
+Crearemos un archivo con una función que verifique tours.
 
+## ALCANCE 0: Haz un "fork" del repositorio
 
-Dentro de nuestro **GitHub Project**, moveremos nuestra historia de usuario:
+- Le darás click al botón de "Fork" dentro de este repositorio.
 
-"Como cliente quiero buscar un destino para agendar un viaje".
+- Bajarás el proyecto a tu computadora y empezarás a trabajar dentro del mismo. Puedes utilizar `git clone` o `git remote`.
 
-Dentro, creamos un issue que vincularemos con un "commit".
+- Verás un único archivo, que será un `README.md`
 
-## ALCANCE 1: Diseña el arreglo de objetos "tours"
+## ALCANCE 1: Diseñemos el arreglo de objetos "tours"
 
-- Crea un archivo llamado `tours.js`
+- Dentro del proyecto, crea un archivo llamado `tours.js`
 
-- Crea una constante `tours` y asígnale un arreglo de objetos que cumpla con las siguientes propiedades:
+- En este archivo, crea una constante `toursMEX` y asígnale un arreglo de objetos que cumpla con las siguientes propiedades:
 
 ```javascript
 id: Number
-titulo: String
+nombreTour: String
 operador: String
 tipoDeTour: String
-visitas: Array
+descripcion: String
+img: String
+pais: String
+zonaSalida: String,
+zonaLlegada: String,
+escalas: Array
 acomodacionIncluida: Boolean,
 transporteIncluido: Boolean,
-edadMinimaRequerida: Number,
+edadMinima: Number,
 requisitos: Object
-    - depositoUSD: Number,
     - seguroDeViaje: Boolean
 duracionTour: Number,
 opiniones: null,
@@ -127,69 +128,64 @@ fechasDisponibles: Object,
             - asientosReservados: Number
 ```
 
-Colocamos a continuación el primer tour con el primer país para que puedas guiarte.
-
-Deberás crear tres países (MEX, GUA, COL) y cada uno deberá incluir 3 `fechasDisponibles`.
+Colocamos a continuación el primer tour para que puedas guiarte. Recuerda crear 3 tours con 3 `fechas disponibles`.
 
 ```javascript
-const tours = [
+const toursMEX = [
     {
-        MEX: {
-            tours: [
-                {// Tour 001
-                    id: 001,
-                    titulo: "México Desconectado",
-                    operador: "Viajeros x el mundo",
-                    tipoDeTour: "Tour en Grupo",
-                    visitas: ["Puebla", "Ciudad de México, Chiapas"],
-                    acomodacionIncluida: true,
-                    transporteIncluido: true,
-                    edadMinimaRequerida: 21,
-                    requisitos: {
-                        depositoUSD: 400,
-                        seguroDeViaje: true
-                    },
-                    duracionTour: 15,
-                    opiniones: null,
-                    calificacion: null,
-                    precioUSD: 1181,
-                    fechasDisponibles: {
-                        2019: {
-                            "001-30Marzo": {
-                                asientosDisponibles: 15,
-                                asientosReservados: 4
-                            },
-                            "002-02Abril": {
-                                asientosDisponibles: 15,
-                                asientosReservados: 6
-                            },
-                            "003-25Abril": {
-                                asientosDisponibles: 15,
-                                asientosReservados: 1
-                            }
-                        }
-                    }
-                }
-                ...
+      "id": "001",
+      "nombreTour": "Chiapas Hermoso",
+      "operador": "Viajeros x el mundo",
+      "tipoDeTour": "Tour en Grupo",
+      "descripcion": "Lindo viaje a Chiapas",
+      "img": "https://megustavolar.iberia.com/wp-content/uploads/San_Cristobal_Casas_Chiapas_Mexico_ferrantraite_Istock.jpg",
+      "pais": "México",
+      "zonaLlegada": "Puebla",
+      "zonaSalida": "Chiapas",
+      "escalas": ["Puebla", "Ciudad de México", "Chiapas"],
+      "acomodacionIncluida": true,
+      "transporteIncluido": true,
+      "edadMinima": 21,
+      "requisitos": {
+        "seguroDeViaje": true
+        },
+      "duracionTour": 15,
+      "opiniones": null,
+      "calificacion": null,
+      "precioUSD": 1181,
+      "fechasDisponibles": {
+        "2019": {
+          "001-30Marzo": {
+            "asientosDisponibles": 15,
+            "asientosReservados": 4
+          },
+          "002-02Abril": {
+            "asientosDisponibles": 15,
+            "asientosReservados": 6
+          },
+          "003-25Abril": {
+            "asientosDisponibles": 15,
+            "asientosReservados": 1
+          }
+        }
+      }
+    }
+    ...
 ```
 
-- Al final de tu archivo, recuerda exportarlo con `module.exports` para abrir disponibilidad de importación.
+- Ahora crea una constante para Colombia y otro para Perú. Haz el mismo procedimiento que con México.
 
-## ALCANCE 2. Crea una variable de usuario en `index.js`
+- Al final tendrás 3 constantes (cada país) y tres fechas disponibles en cada uno.
 
-- Crea un archivo llamado `index.js`
+## ALCANCE 2. Planteemos la estrategia técnica
 
-- Importa `tours.js` al inicio con `require`
+Dividiremos el archivo en dos partes:
 
-- Crea una variable `const` con un objeto que incluya los datos del usuario, con las siguientes propiedades:
+a. Constantes
+b. Funciones (Declaraciones)
+c. Funciones (Invocaciones)
 
-```javascript
-const usuario = {
-  nick: "mikenieva",
-  nombre: "Miguel",
-  apellido: "Nieva"
-};
-```
+Por ahora, sólo tenemos constantes al inicio. Seguiremos con las funciones.
 
 ## ALCANCE 3. Crea una función "searchTours"
 
@@ -197,41 +193,45 @@ const usuario = {
 
   - Parámetros:
 
-    - `toursArray`. Un arreglo de objetos que contenga países con sus tours, (básicamente será tu archivo `tours.js`).
-    - `countryString`. Un `string` que incluya la clave del país.
+    - `toursArray`. Un arreglo de objetos que contenga países con sus tours, (básicamente una de tus constantes).
 
   - Retorno:
     - Un arreglo de objetos con los tours de ese país en específico.
 
 ```javascript
-const searchTours = (toursArray, countryString) => {
-  // Dado los dos datos recibidos, busques en toursArray y retornes un arreglo de objetos con los tours de ese país en específico.
+const searchTours = (toursArray) => {
+// Aquí va tu código
 };
 
-buscarToursPorPais(tours, "MEX");
-//=>   [{...tour1},{...tour2},{...tour3}]
 ```
 
-## ALCANCE 4. Indica el nombre del usuario y cuántos tours tiene Colombia (COL)
+## ALCANCE 4. Probemos nuestra función "searchTours"
+
+```javascript
+searchTours(toursMEX);
+//=>   [{...tour1},{...tour2},{...tour3}]
+```
 
 Para cerrar el ejercicio, realiza un `console.log()` donde generes un `string` el cual indique el nombre del usuario y cuántos tours tiene Colombia, aprovechando tu función anterior.
 
 ```shell
-console.log(`USUARIO encontró X tours en Colombia `)
+console.log(`USUARIO encontró X tours en Colombia`)
 ```
 
-
+# Sesión 2: DOM
 
 ## Objetivos
 
-Crearemos una página web que contenga una barra de búsqueda, utilizando nuestra función `buscarToursPorPais` creada anteriormente.
+Crearemos una página web que contenga una barra de búsqueda, utilizando nuestra función `searchTours` creada anteriormente.
 
-## ALCANCE 0: Gestión del proyecto
+## ALCANCE 5: Ciclos con Git y GitHub
 
-## ALCANCE 1: Genera la arquitectura de carpetas y archivos
+- Hasta ahora, tenemos un archivo llamado `tours.js`. Súbelo a GitHub a través de `git push`.
 
-- Crea dos carpetas llamadas "js" y "css".
+- Ahora, crea una carpeta llamada "js".
+  
 - Inserta tus dos archivos anteriores (tours.js e index.js) dentro de la carpeta "js"
+  
 - Crea un archivo llamado index.html en la raiz del proyecto. Este será el archivo HTML donde se ejecutarán nuestros archivos Javascript.
 
 ```javascript
@@ -239,21 +239,86 @@ Crearemos una página web que contenga una barra de búsqueda, utilizando nuestr
 |-js
    |-tours.js
    |-index.js
-|-css
 |-index.html
 
 ```
 - Abre el archivo index.html y crea las etiquetas fundamentales (DOCTYPE, html, head, body)
 - Escribe un "hola mundo" y revisa que esté expresado en tu navegador abriendo el archivo.
 
-## ALCANCE 2: Crea la barra de búsqueda con su botón
+## ALCANCE 6: Integremos HTML con Javascript
 
 - Inserta una etiqueta <input> incluyendo un botón llamado "Buscar".
 - Dentro de nuestro archivo "index.js", agrega un evento que, al darle click al botón, genere en consola un "Sí funciona"
 
 
-## ALCANCE 3: Integra la función `buscarToursPorPais` con la barra de búsqueda
+## ALCANCE 7: Crea la barra de búsqueda con su botón
 
-## ALCANCE 4: Expresa los países encontrados en HTML
+## ALCANCE 8: Integra la función `searchTours` con la barra de búsqueda
+
+# Sesión 3: ES6
+
+## ALCANCE 9: Convierte todo tu código anterior a ES6
+
+## ALCANCE 10: Exportación e importación
+
+## ALCANCE 11: Modelo, Vista, Controlador
+
+## ALCANCE 12: Expresa los países encontrados con HTML
 
 
+
+# Sesión 4: NodeJS y Arquitectura
+
+## ALCANCE 13: Instalamos Node.js
+
+## ALCANCE 14: Configuremos Webpack y Babel
+
+## ALCANCE 15: Javascript compilando con Webpack
+
+## ALCANCE 16: Integremos archivos y funciones previas
+
+
+# Sesión 5: JSON y APIs
+
+## ALCANCE 17: Creando archivos JSON
+
+## ALCANCE 18: Consumo de archivos JSON
+
+## ALCANCE 19: "State" y rendrización de resultados
+
+## ALCANCE 20: Guardando nuestros datos en "state"
+
+
+
+
+# Sesión 6: Asincronía
+
+## ALCANCE 21: Async y Await en el área de búsqueda
+
+## ALCANCE 22: Generando los eventos para el área de búsqueda
+
+## ALCANCE 23: Async y Await en el área de tours
+
+## ALCANCE 24: Generando los eventos para el área de tours
+
+
+# Sesión 7: Programación Orientada a Objetos
+
+## ALCANCE 25: Diseñando la clase "Tour"
+
+## ALCANCE 26: Diseñando la clase "Search"
+
+## ALCANCE 27: Combinando nuestros modelos con las vistas
+
+## ALCANCE 28: Diseñando el controlador
+
+
+
+# Sesión 8: Programación Funcional
+
+
+## ALCANCE 29: Utilizando .find para encontrar tours
+
+## ALCANCE 30: Utilizando .map para renderizar conjuntos de datos
+
+## ALCANCE 31: Subiendo el proyecto a GitHub
