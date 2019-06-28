@@ -8,13 +8,14 @@ export default class Search {
     }
 
     async getResults(){
+        const pais = this.query.toLowerCase()
         try{
-            const res = await axios(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`)
-            this.result = res.data.recipes
+            const res = await axios(`./${pais}.json`)
+            this.result = res.data
             console.log("Fetching:", this.result)
         } catch (error){
-            alert(error)
+            console.log("Try again")
         }
-        
     }
 }
+

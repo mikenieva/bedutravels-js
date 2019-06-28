@@ -1,14 +1,5 @@
 import { elements } from './base'
 
-/* 
-Pasta with tomato and spinach
-acc: 0 / acc + curr.length = 5 / newTitle =['Pasta']
-acc: 5 / acc + curr.length = 9 / newTitle =['Pasta', 'with']
-acc: 9 / acc + curr.length = 15 / newTitle = ['Pasta', 'with', 'tomato']
-acc: 15 / acc + curr.length = 18 / newTitle = ['Pasta', 'with', 'tomato']
-acc: 18 / acc + curr.length = 24 / newTitle = ['Pasta', 'with', 'tomato']
-*/ 
-
 export const highlightSelected = id => {
     const resultsArr = Array.from(document.querySelectorAll('.results__link'))
 
@@ -35,20 +26,20 @@ const limitRecipeTitle = (title, limit = 17) => {
 }
 
 const renderRecipe = recipe => {
+    console.log("recipe:", recipe)
     const markup = `
         <li>
-        <a class="results__link" href="#${recipe.recipe_id}">
+        <a class="results__link" href="#${recipe.id}">
             <figure class="results__fig">
-                    <img src="${recipe.image_url}" alt="${recipe.title}">
+                    <img src="${recipe.img}" alt="${recipe.nombreTour}">
                 </figure>
                 <div class="results__data">
-                    <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
-                    <p class="results__author">${recipe.publisher}</p>
+                    <h4 class="results__name">${limitRecipeTitle(recipe.nombreTour)}</h4>
+                    <p class="results__author">${recipe.pais}</p>
                 </div>
             </a>
         </li>        
     `
-
     elements.searchReslist.insertAdjacentHTML('beforeend', markup)
 }
 
@@ -98,6 +89,7 @@ const renderButtons = (page, numResults, resPerPage) => {
 }
 
 export const renderResults = (recipes, page = 1, resPerPage = 10) => {
+    console.log(recipes)
     // render results of current page
     const start = (page - 1) * resPerPage
     const end = page * resPerPage
@@ -106,6 +98,4 @@ export const renderResults = (recipes, page = 1, resPerPage = 10) => {
 
     // render pagination buttons
     renderButtons(page, recipes.length, resPerPage)
-
-
 }

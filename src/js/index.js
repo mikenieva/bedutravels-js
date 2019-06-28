@@ -38,13 +38,14 @@ const controlSearch = async () => {
         clearLoader();
         searchView.renderResults(state.search.result);
     } catch(err){
-        alert('Something wrong with the search...')
+        alert('País no encontrado. Intenta nuevamente.')
         clearLoader();
     }
 
   
   }
 };
+
 elements.searchForm.addEventListener("submit", e => {
   e.preventDefault();
   controlSearch();
@@ -75,19 +76,14 @@ const controlRecipe = async () => {
 
     // Hightlight selected search item
     if (state.search) searchView.highlightSelected(id);
-
-
     // Create new recipe object
     state.recipe = new Recipe(id);
-    
+
     try {
       // Get recipe data and parse ingredients
         await state.recipe.getRecipe();
-        console.log("state.recipe.ingredients:",  state.recipe.ingredients)
-        state.recipe.parseIngredients()
-
+        console.log("state.recipe", state.recipe)
       // Calculate servings and time
-        state.recipe.calcTime();
         state.recipe.calcServings();
 
         // Render recipe
@@ -100,8 +96,7 @@ const controlRecipe = async () => {
     }
 };
 
-// window.addEventListener('hashchange', controlRecipe)
-// window.addEventListener('load', controlRecipe)
+
 
 ["hashchange", "load"].forEach(event =>
   window.addEventListener(event, controlRecipe)
