@@ -1,17 +1,6 @@
 import { elements } from './base'
 
-export const highlightSelected = id => {
-    const resultsArr = Array.from(document.querySelectorAll('.results__link'))
-
-    resultsArr.forEach(el => {
-        el.classList.remove('results__link--active')
-    })
-    console.log(resultsArr)
-    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active')
-
-}
-
-const limitRecipeTitle = (title, limit = 17) => {
+const limitRecipeTitle = (title, limit = 25) => {
     const newTitle = []
     if(title.length > limit){
         title.split(' ').reduce((acc, curr) => {
@@ -26,10 +15,9 @@ const limitRecipeTitle = (title, limit = 17) => {
 }
 
 const renderRecipe = recipe => {
-    console.log("recipe:", recipe)
     const markup = `
         <li>
-        <a class="results__link" href="#${recipe.id}">
+        <a class="results__link" href="#${recipe.slug}-${recipe.id}">
             <figure class="results__fig">
                     <img src="${recipe.img}" alt="${recipe.nombreTour}">
                 </figure>
@@ -57,7 +45,7 @@ export const clearResults = () => {
 // type: prev or next
 const createButton = (page, type) => `
     <button class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page -1 : page +1}>
-    <span>Page ${type === "prev" ? page - 1 : page + 1}</span>
+    <span>Página ${type === "prev" ? page - 1 : page + 1}</span>
     <svg class="search__icon">
         <use href="img/icons.svg#icon-triangle-${
         type === "prev" ? "left" : "right"
@@ -65,6 +53,13 @@ const createButton = (page, type) => `
     </svg>
     </button>
 `;
+
+const createMessage = () => `
+    <button class="btn-inline-none">
+        Todos los tours están mostrados
+    </button>
+`;
+
 
 const renderButtons = (page, numResults, resPerPage) => {
     const pages = Math.ceil(numResults / resPerPage)
@@ -82,13 +77,15 @@ const renderButtons = (page, numResults, resPerPage) => {
     } else if (page === pages && pages > 1){
         // Only button to go to prev page
         button = createButton(page, 'prev')
+    } else {
+        button = createMessage()
     }
 
     elements.searchResPages.insertAdjacentHTML('afterbegin', button)
 
 }
 
-export const renderResults = (recipes, page = 1, resPerPage = 10) => {
+export const renderResults = (recipes, page = 1, resPerPage = 5) => {
     console.log(recipes)
     // render results of current page
     const start = (page - 1) * resPerPage

@@ -10,7 +10,7 @@ export default class Search {
     async getResults(){
         const pais = this.query.toLowerCase()
         try{
-            const res = await axios(`./${pais}.json`)
+            const res = await axios(`./data/${pais}.json`)
             this.result = res.data
             console.log("Fetching:", this.result)
         } catch (error){

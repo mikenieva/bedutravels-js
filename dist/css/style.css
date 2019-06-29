@@ -104,6 +104,7 @@ body {
   align-items: center;
   transition: all 0.2s;
 }
+
 .btn-inline svg {
   height: 1.5rem;
   width: 1.5rem;
@@ -119,6 +120,27 @@ body {
 }
 .btn-inline:focus {
   outline: none;
+}
+
+.btn-inline-none {
+  color: #f59a83;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #f9f5f3;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.btn-inline-none:hover {
+color: #f48982;
+background-color: #f2efee;
+}
+.btn-inline-none:focus {
+outline: none;
 }
 
 .btn-tiny {
@@ -432,16 +454,11 @@ body {
 .recipe__info-buttons {
   display: flex;
   margin-left: 1.5rem;
-  visibility: hidden;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(5px);
   transition: all 0.4s;
 }
-.recipe:hover .recipe__info-buttons {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
+
 .recipe__love {
   background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
   border-radius: 50%;

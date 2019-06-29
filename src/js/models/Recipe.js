@@ -5,9 +5,10 @@ export default class Recipe {
     constructor(id) {
         this.id = id
     }
-    async getRecipe(){
+    async getRecipe(country){
         try {
-            const res = await axios(`./mexico.json`)
+            console.log(this.id)
+            const res = await axios(`./data/${country}.json`)
             
             const singleTour = res.data.find( e => {
                 console.log("e", e)

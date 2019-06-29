@@ -212,10 +212,10 @@ searchTours(toursMEX);
 //=>   [{...tour1},{...tour2},{...tour3}]
 ```
 
-Para cerrar el ejercicio, realiza un `console.log()` donde generes un `string` el cual indique el nombre del usuario y cuántos tours tiene Colombia, aprovechando tu función anterior.
+Para cerrar el ejercicio, realiza un `console.log()` donde generes un `string` el cual indique el nombre del usuario y cuántos tours tiene México, aprovechando tu función anterior.
 
 ```shell
-console.log(`USUARIO encontró X tours en Colombia`)
+console.log(`USUARIO encontró X tours en México`)
 ```
 
 # Sesión 2: DOM
@@ -247,8 +247,9 @@ Crearemos una página web que contenga una barra de búsqueda, utilizando nuestr
 
 ## ALCANCE 6: Integremos HTML con Javascript
 
-- Inserta una etiqueta <input> incluyendo un botón llamado "Buscar".
-- Dentro de nuestro archivo "index.js", agrega un evento que, al darle click al botón, genere en consola un "Sí funciona"
+- Inserta una etiqueta `<input>` incluyendo un botón llamado "Buscar".
+ 
+- Dentro de nuestro archivo "index.js", agrega un evento que, al darle click al botón, genere en consola un "Sí funciona".
 
 
 ## ALCANCE 7: Crea la barra de búsqueda con su botón
@@ -271,7 +272,23 @@ Crearemos una página web que contenga una barra de búsqueda, utilizando nuestr
 
 ## ALCANCE 13: Instalamos Node.js
 
+- Tendrás que ir a la página de (NodeJS)[https://nodejs.org] y descargar el programa. Dependiendo de tu sistema operativo, se te indicará cuál es tu mejor recomendación.
+
+De preferencia, elige el LTS (Long-Term Support) que significa una versión de Node que estará soportado y mantenido a largo plazo por la comunidad.
+
+![NodeJS Installation](https://i.imgur.com/opSa7md.png)
+
+Abrirás tu terminal y a través del siguiente comando confirmarás que ya lo tienes incorporado.
+
+```shell
+npm --version
+```
+
+Si el retorno es un número, significa que ya está listo tu sistema.
+
+
 ## ALCANCE 14: Configuremos Webpack y Babel
+
 
 ## ALCANCE 15: Javascript compilando con Webpack
 

@@ -1,3 +1,5 @@
+// 1. Importaciones
+
 import Search from "./models/Search";
 import Recipe from "./models/Recipe";
 import * as searchView from "./views/searchView";
@@ -38,11 +40,10 @@ const controlSearch = async () => {
         clearLoader();
         searchView.renderResults(state.search.result);
     } catch(err){
-        alert('País no encontrado. Intenta nuevamente.')
-        clearLoader();
-    }
 
-  
+        alert(err)
+        clearLoader();
+    }  
   }
 };
 
@@ -66,23 +67,23 @@ RECIPE CONTROLLER
 
 const controlRecipe = async () => {
   // Get ID from url
-  const id = window.location.hash.replace("#", "");
-  console.log(id);
+  const hashless = window.location.hash.replace("#", "");
 
+  const id =  hashless.match(/\d+/g)[0]
+  const country =   hashless.match(/[a-zA-Z]+/g)[0]
+  
   if (id) {
     // Prepare UI for changes
     recipeView.clearRecipe()
     renderLoader(elements.recipe)
 
-    // Hightlight selected search item
-    if (state.search) searchView.highlightSelected(id);
     // Create new recipe object
     state.recipe = new Recipe(id);
 
     try {
       // Get recipe data and parse ingredients
-        await state.recipe.getRecipe();
-        console.log("state.recipe", state.recipe)
+        await state.recipe.getRecipe(country);
+
       // Calculate servings and time
         state.recipe.calcServings();
 

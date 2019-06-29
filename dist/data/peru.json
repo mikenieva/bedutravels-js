@@ -1,6 +1,7 @@
 [
     {
       "id": "001",
+      "slug": "mexico",
       "nombreTour": "Chiapas Hermoso",
       "operador": "Viajeros x el mundo",
       "tipoDeTour": "Tour en Grupo",
@@ -39,6 +40,7 @@
     },
     {
       "id": "002",
+      "slug": "mexico",
       "nombreTour": "Guanajuato por siempre",
       "operador": "Viajeros x el mundo",
       "tipoDeTour": "Tour en Grupo",
@@ -77,6 +79,7 @@
     },
     {
       "id": "003",
+      "slug": "mexico",
       "nombreTour": "Yucatán y naturaleza",
       "operador": "Viajeros x el mundo",
       "tipoDeTour": "Tour en Grupo",
@@ -115,6 +118,7 @@
     },
     {
       "id": "004",
+      "slug": "mexico",
       "nombreTour": "Yucatán y naturaleza",
       "operador": "Viajeros x el mundo",
       "tipoDeTour": "Tour en Grupo",
@@ -153,6 +157,7 @@
     },
     {
       "id": "005",
+      "slug": "mexico",
       "nombreTour": "Yucatán y naturaleza",
       "operador": "Viajeros x el mundo",
       "tipoDeTour": "Tour en Grupo",
