@@ -258,6 +258,8 @@ Crearemos una página web que contenga una barra de búsqueda, utilizando nuestr
 
 # Sesión 3: ES6
 
+## Objetivos
+
 ## ALCANCE 9: Convierte todo tu código anterior a ES6
 
 ## ALCANCE 10: Exportación e importación
@@ -269,6 +271,8 @@ Crearemos una página web que contenga una barra de búsqueda, utilizando nuestr
 
 
 # Sesión 4: NodeJS y Arquitectura
+
+## Objetivos
 
 ## ALCANCE 13: Instalamos Node.js
 
@@ -297,6 +301,8 @@ Si el retorno es un número, significa que ya está listo tu sistema.
 
 # Sesión 5: JSON y APIs
 
+## Objetivos
+
 ## ALCANCE 17: Creando archivos JSON
 
 ## ALCANCE 18: Consumo de archivos JSON
@@ -310,6 +316,8 @@ Si el retorno es un número, significa que ya está listo tu sistema.
 
 # Sesión 6: Asincronía
 
+## Objetivos
+
 ## ALCANCE 21: Async y Await en el área de búsqueda
 
 ## ALCANCE 22: Generando los eventos para el área de búsqueda
@@ -320,6 +328,8 @@ Si el retorno es un número, significa que ya está listo tu sistema.
 
 
 # Sesión 7: Programación Orientada a Objetos
+
+## Objetivos
 
 ## ALCANCE 25: Diseñando la clase "Tour"
 
@@ -333,6 +343,7 @@ Si el retorno es un número, significa que ya está listo tu sistema.
 
 # Sesión 8: Programación Funcional
 
+## Objetivos
 
 ## ALCANCE 29: Utilizando .find para encontrar tours
 
