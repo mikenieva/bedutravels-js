@@ -72,6 +72,7 @@ Mientras tanto, el área de ventas empieza a armar los primeros tours para que s
 
 Comenzamos con el producto.
 
+# Objetivo
 
 # Sesión 1: Fundamentos de Programación
 
@@ -85,13 +86,33 @@ Te pedimos que instales los siguientes programas:
 
 ## **Objetivos**
 
-Crearemos un archivo con una función que verifique tours.
+Crearemos nuestro primer script. Incluirá una función que retorne tours, a partir de la creación de un objeto.
 
 ## ALCANCE 0: Haz un "fork" del repositorio
 
-- Le darás click al botón de "Fork" dentro de este repositorio.
+- Primero, le darás click al botón de "Fork" dentro de este repositorio.
 
-- Bajarás el proyecto a tu computadora y empezarás a trabajar dentro del mismo. Puedes utilizar `git clone` o `git remote`.
+- Posteriormente, bajarás el proyecto a tu computadora. Para hacerlo, abre tu terminal y ejecuta los siguientes comandos. 
+
+> Recuerda sustituir "TU-USUARIO-DE-GITHUB" por tu respectivo usuario de GitHub.
+
+```shell  
+git clone https://github.com/[TU-USUARIO-DE-GITHUB]/bedutravels-js.git
+```
+
+ó
+
+```shell   
+mkdir bedutravels
+
+cd bedutravels
+
+git init
+
+git remote add origin https://github.com/[TU-USUARIO-DE-GITHUB]/bedutravels-js.git
+
+git pull origin master
+```
 
 - Verás un único archivo, que será un `README.md`
 
@@ -268,7 +289,7 @@ Crearemos una página web que contenga una barra de búsqueda, utilizando nuestr
 
 
 
-# Sesión 4: NodeJS y Arquitectura
+# Sesión 4: NodeJS & Arquitectura
 
 ## ALCANCE 13: Instalamos Node.js
 
