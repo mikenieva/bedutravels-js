@@ -66,13 +66,15 @@ Nuestra empresa se llama BEDU Travels.
 
 Habiendo tenido tanto éxito en nuestras franquicias de agencias de viajes, hemos recibido una ronda de capital para comenzar nuestra expansión.
 
-Entre los retos, está la construcción de nuestra plataforma online, la cual queda a cargo de nosotros, el equipo de desarrollo.
+Entre los retos, está la construcción de nuestra plataforma online, la cual queda a cargo de nosotros, el equipo de desarrollo. 
+
+Tenemos trazado el camino hacia el primer producto mínimo viable, por lo que ya podemos empezar a desarrollar.
 
 Mientras tanto, el área de ventas empieza a armar los primeros tours para que se suban a nuestra plataforma, así como un listado de datos que deben también reflejarse.
 
-Comenzamos con el producto.
+Con esto claro, comenzamos con el producto.
 
-# Objetivo
+![Proyecto Final](https://i.imgur.com/oW7btoZ.png)
 
 # Sesión 1: Fundamentos de Programación
 
