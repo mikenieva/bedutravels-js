@@ -12,7 +12,6 @@ export default class Search {
         try{
             const res = await axios(`./data/${pais}.json`)
             this.result = res.data
-            console.log("Fetching:", this.result)
         } catch (error){
             console.log("Try again")
         }

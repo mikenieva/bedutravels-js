@@ -1,21 +1,15 @@
 import axios from 'axios'
 import { key } from '../config'
 
-export default class Recipe {
+export default class Tour {
     constructor(id) {
         this.id = id
     }
-    async getRecipe(country){
+    async getTour(country){
         try {
-            console.log(this.id)
             const res = await axios(`./data/${country}.json`)
             
-            const singleTour = res.data.find( e => {
-                console.log("e", e)
-                console.log("this.id", this.id)
-                console.log(e.id === this.id)
-                return e.id === this.id
-            });
+            const singleTour = res.data.find( e => e.id === this.id);
 
             this.nombreTour = singleTour.nombreTour
             this.img = singleTour.img
@@ -36,9 +30,12 @@ export default class Recipe {
             this.opiniones = singleTour.opiniones
             this.calificacion = singleTour.calificacion
             this.precioUSD = singleTour.precioUSD
-            this.fechasDisponibles = this.fechasDisponibles
+            this.fechasDisponibles = singleTour.fechasDisponibles
+            this.asientosDisponibles = singleTour.asientosDisponibles
+            this.asientosReservados = singleTour.asientosReservados
+
         } catch(error){
-            alert('Hay problemas...')
+            alert(err)
         }
     }
 
@@ -53,10 +50,7 @@ export default class Recipe {
     }
 
     updateServings (type) {
-        // Personas
         const newServings = type === 'dec' ? this.servings - 1 : this.servings + 1;
-
         this.servings = newServings;
     }
-
 }

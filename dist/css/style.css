@@ -18,7 +18,6 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #655a56;
-  background-image: white;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);
@@ -81,7 +80,7 @@ body {
 .btn-small:link,
 .btn-small:visited {
   font-size: 1.3rem;
-  padding: 1rem 1.75rem;
+  padding: 1rem 2.75rem;
   text-decoration: none;
 }
 .btn-small svg,
@@ -93,14 +92,14 @@ body {
 }
 
 .btn-inline {
-  color: #f59a83;
+  color: #f32735;
   font-size: 1.2rem;
-  border: none;
   background-color: #f9f5f3;
   padding: 0.8rem 1.2rem;
-  border-radius: 10rem;
+  border-radius: 0rem;
   cursor: pointer;
   display: flex;
+  border: 1px solid red;
   align-items: center;
   transition: all 0.2s;
 }
@@ -116,14 +115,14 @@ body {
 }
 .btn-inline:hover {
   color: #f48982;
-  background-color: #f2efee;
+  background-color: #f1f2f2;
 }
 .btn-inline:focus {
   outline: none;
 }
 
 .btn-inline-none {
-  color: #f59a83;
+  color: #f32735;
   font-size: 1.2rem;
   border: none;
   background-color: #f9f5f3;
@@ -137,7 +136,7 @@ body {
 
 .btn-inline-none:hover {
 color: #f48982;
-background-color: #f2efee;
+background-color: #f1f2f2;
 }
 .btn-inline-none:focus {
 outline: none;
@@ -153,7 +152,7 @@ outline: none;
 .btn-tiny svg {
   height: 100%;
   width: 100%;
-  fill: #f59a83;
+  fill: #f32735;
   transition: all 0.3s;
 }
 .btn-tiny:focus {
@@ -192,7 +191,7 @@ outline: none;
 .loader svg {
   height: 5.5rem;
   width: 5.5rem;
-  fill: #f59a83;
+  fill: #f32735;
   transform-origin: 44% 50%;
   animation: rotate 1.5s infinite linear;
 }
@@ -279,7 +278,7 @@ outline: none;
   opacity: 1;
 }
 .likes__icon {
-  fill: #f59a83;
+  fill: #f32735;
   height: 3.75rem;
   width: 3.75rem;
 }
@@ -343,7 +342,7 @@ outline: none;
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  background-image: linear-gradient(to right bottom, #f7d57f, #f3776f);
   opacity: 0.4;
 }
 .results__fig img,
@@ -357,7 +356,7 @@ outline: none;
 .results__name,
 .likes__name {
   font-size: 1.3rem;
-  color: #f59a83;
+  color: #f32735;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -390,15 +389,15 @@ outline: none;
   float: right;
 }
 
-.recipe {
+.tour {
   background-color: #f9f5f3;
   border-top: 1px solid #fff;
 }
-.recipe__fig {
+.tour__fig {
     height: 30rem;
     transform-origin: top;
 }
-.recipe__fig::before {
+.tour__fig::before {
     content: "";
     display: block;
     height: 100%;
@@ -407,51 +406,50 @@ outline: none;
     left: 0;
     opacity: 0.6;
 }
-.recipe__img {
+.tour__img {
     width: 100%;
     display: block;
     height: 100%;
     object-fit: cover;
 }
-.recipe__title {
+.tour__title {
     color: #fff;
     font-weight: 700;
     font-size: 2.75rem;
     text-transform: uppercase;
     text-align: center;
 }
-.recipe__title span {
+.tour__title span {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     padding: 1.3rem 2rem;
     background: red;
 }
-.recipe__details {
+.tour__details {
   display: flex;
-  align-items: center;
   padding: 8rem 3rem 3rem 3rem;
-  justify-content: center;
+  justify-content: space-around;
 }
-.recipe__info {
+.tour__info {
   font-size: 1.5rem;
   text-transform: uppercase;
   display: flex;
   align-items: center;
 }
-.recipe__info:not(:last-child) {
-  margin-right: 4rem;
-}
-.recipe__info-icon {
+
+.tour__info-icon {
   height: 2rem;
   width: 2rem;
-  fill: #f59a83;
+  fill: #f32735;
   margin-right: 1rem;
 }
-.recipe__info-data {
+
+.tour__info-data {
   margin-right: 0.4rem;
   font-weight: 600;
 }
-.recipe__info-buttons {
+
+.tour__info-buttons {
   display: flex;
   margin-left: 1.5rem;
   opacity: 1;
@@ -459,7 +457,7 @@ outline: none;
   transition: all 0.4s;
 }
 
-.recipe__love {
+.tour__love {
   background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
   border-radius: 50%;
   border: none;
@@ -472,22 +470,22 @@ outline: none;
   align-items: center;
   justify-content: center;
 }
-.recipe__love:hover {
+.tour__love:hover {
   transform: scale(1.07);
 }
-.recipe__love:focus {
+.tour__love:focus {
   outline: none;
 }
-.recipe__love svg {
+.tour__love svg {
   height: 2.75rem;
   width: 2.75rem;
   fill: #fff;
 }
-.recipe__ingredients {
+.tour__ingredients {
   padding: 4rem 5rem;
   font-size: 1.5rem;
   line-height: 1.4;
-  background-color: #f2efee;
+  background-color: #f1f2f2;
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -496,7 +494,7 @@ outline: none;
   list-style: none;
   margin-bottom: 3rem;
 }
-.recipe__ingredient-list {
+.tour__ingredient-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: 1.5rem;
@@ -505,41 +503,55 @@ outline: none;
   margin-bottom: 3rem;
   text-align: center;
 }
-.recipe__item {
+.tour__item {
   display: flex;
   justify-content: center;
 }
-.recipe__icon {
+.tour__icon {
   height: 1.8rem;
   width: 1.8rem;
-  fill: #f59a83;
-  border: 1px solid #f59a83;
+  fill: #f32735;
+  border: 1px solid #f32735;
   border-radius: 50%;
   padding: 2px;
   margin-right: 1rem;
   flex: 0 0 auto;
   margin-top: 0.1rem;
 }
-.recipe__count {
+.tour__count {
   margin-right: 0.5rem;
   flex: 0 0 auto;
 }
-.recipe__directions {
+.tour__directions {
   padding: 4rem;
   padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.recipe__directions-text {
+.tour__directions-text {
   font-size: 1.5rem;
   text-align: center;
   width: 90%;
   margin-bottom: 3rem;
   color: #968b87;
 }
-.recipe__by {
+.tour__by {
   font-weight: 700;
+}
+
+.tour__package{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 3.5rem;
+  grid-row-gap: 1.5rem;
+  list-style: none;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.tour__package p {
+  font-size: 21px;
 }
 
 .shopping {
@@ -556,13 +568,13 @@ outline: none;
   display: flex;
   align-items: flex-start;
   padding: 1.3rem 0;
-  border-bottom: 1px solid #f2efee;
+  border-bottom: 1px solid #f1f2f2;
   position: relative;
 }
 .shopping__count {
   flex: 0 0 7.5rem;
   padding: 0.4rem 0.5rem;
-  border: 1px solid #f2efee;
+  border: 1px solid #f1f2f2;
   border-radius: 3px;
   margin-right: 2rem;
   cursor: pointer;
@@ -580,7 +592,7 @@ outline: none;
 }
 .shopping__count input:focus {
   outline: none;
-  background-color: #f2efee;
+  background-color: #f1f2f2;
 }
 .shopping__count p {
   font-size: 1.2rem;

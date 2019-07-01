@@ -1,16 +1,15 @@
 // 1. Importaciones
 
 import Search from "./models/Search";
-import Recipe from "./models/Recipe";
+import Tour from "./models/Tour";
 import * as searchView from "./views/searchView";
-import * as recipeView from "./views/recipeView";
+import * as tourView from "./views/tourView";
 import { elements, renderLoader, clearLoader } from "./views/base";
 
 /* Global State 
     - Search object
-    - Current recipe object
+    - Current tour object
     - Shopping list object
-    - Liked recipes
 */
 
 const state = {};
@@ -20,27 +19,26 @@ SEARCH CONTROLLER
 */
 
 const controlSearch = async () => {
-  // 1) Get the query from view
+  // 1. Obtener la búsqueda de la vista
   const query = searchView.getInput()
 
   if (query) {
-    // 2) New search object and add to state
+    // 2) Si existe un dato válido, creamos un nuevo objeto "search" y lo agregamos al "state"
     state.search = new Search(query);
 
-    // 3) Prepare UI for results
+    // 3) Preparamos la interfaz para los resultados
     searchView.clearInput();
     searchView.clearResults();
     renderLoader(elements.searchRes);
 
     try {
-        // 4) Search for recipes
+        // 4) Buscamos los tours
         await state.search.getResults();
 
-        // 5) Render results on UI
+        // 5) Renderizamos los resultados en la interfaz
         clearLoader();
         searchView.renderResults(state.search.result);
     } catch(err){
-
         alert(err)
         clearLoader();
     }  
@@ -62,10 +60,10 @@ elements.searchResPages.addEventListener("click", e => {
 });
 
 /*
-RECIPE CONTROLLER
+TOUR CONTROLLER
 */
 
-const controlRecipe = async () => {
+const controltour = async () => {
   // Get ID from url
   const hashless = window.location.hash.replace("#", "");
 
@@ -74,47 +72,44 @@ const controlRecipe = async () => {
   
   if (id) {
     // Prepare UI for changes
-    recipeView.clearRecipe()
-    renderLoader(elements.recipe)
+    tourView.cleartour()
+    renderLoader(elements.tour)
 
-    // Create new recipe object
-    state.recipe = new Recipe(id);
-
+    // Create new tour object
+    state.tour = new Tour(id);
+    
     try {
-      // Get recipe data and parse ingredients
-        await state.recipe.getRecipe(country);
+      // Get tour data and parse ingredients
+        await state.tour.getTour(country);
 
       // Calculate servings and time
-        state.recipe.calcServings();
+        state.tour.calcServings();
 
-        // Render recipe
+        // Render tour
         clearLoader();
-        recipeView.renderRecipe(state.recipe)
+        tourView.rendertour(state.tour)
 
     } catch (err) {
-        alert("Error processing recipe");
+        alert(err);
         }
     }
 };
 
-
-
 ["hashchange", "load"].forEach(event =>
-  window.addEventListener(event, controlRecipe)
+  window.addEventListener(event, controltour)
 );
 
 // Handling reciope button clicks
-elements.recipe.addEventListener('click', e => {
+elements.tour.addEventListener('click', e => {
   if(e.target.matches('.btn-decrease, .btn-decrease *')){
     // Decrease button is clicked
-    if(state.recipe.servings > 1){
-        state.recipe.updateServings('dec')
-        recipeView.updateServingsIngredients(state.recipe)
+    if(state.tour.servings > 1){
+        state.tour.updateServings('dec')
+        tourView.updateServingsIngredients(state.tour)
     }
   } else if(e.target.matches('.btn-increase, .btn-increase *')){
     // Increase button is clicked
-    state.recipe.updateServings('inc')
-    recipeView.updateServingsIngredients(state.recipe)
+    state.tour.updateServings('inc')
+    tourView.updateServingsIngredients(state.tour)
   }
-  console.log(state.recipe)
 })

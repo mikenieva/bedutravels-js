@@ -1,18 +1,10 @@
-/*
-BASE
-
-- Elementos
-- 
-
-*/
-
 export const elements = {
     searchForm:     document.querySelector('.search'),
     searchInput:    document.querySelector('.search__field'),
     searchRes:      document.querySelector('.results'),
     searchReslist:  document.querySelector('.results__list'),
     searchResPages: document.querySelector('.results__pages'),
-    recipe:         document.querySelector('.recipe')
+    tour:         document.querySelector('.tour')
 }
 
 export const elementStrings = {

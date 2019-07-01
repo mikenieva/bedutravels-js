@@ -1,6 +1,6 @@
 import { elements } from './base'
 
-const limitRecipeTitle = (title, limit = 25) => {
+const limittourTitle = (title, limit = 25) => {
     const newTitle = []
     if(title.length > limit){
         title.split(' ').reduce((acc, curr) => {
@@ -14,16 +14,16 @@ const limitRecipeTitle = (title, limit = 25) => {
     return title
 }
 
-const renderRecipe = recipe => {
+const rendertour = tour => {
     const markup = `
         <li>
-        <a class="results__link" href="#${recipe.slug}-${recipe.id}">
+        <a class="results__link" href="#${tour.slug}-${tour.id}">
             <figure class="results__fig">
-                    <img src="${recipe.img}" alt="${recipe.nombreTour}">
+                    <img src="${tour.img}" alt="${tour.nombreTour}">
                 </figure>
                 <div class="results__data">
-                    <h4 class="results__name">${limitRecipeTitle(recipe.nombreTour)}</h4>
-                    <p class="results__author">${recipe.pais}</p>
+                    <h4 class="results__name">${limittourTitle(tour.nombreTour)}</h4>
+                    <p class="results__author">${tour.pais}</p>
                 </div>
             </a>
         </li>        
@@ -85,14 +85,14 @@ const renderButtons = (page, numResults, resPerPage) => {
 
 }
 
-export const renderResults = (recipes, page = 1, resPerPage = 5) => {
-    console.log(recipes)
+export const renderResults = (tours, page = 1, resPerPage = 5) => {
+    console.log(tours)
     // render results of current page
     const start = (page - 1) * resPerPage
     const end = page * resPerPage
 
-    recipes.slice(start, end).forEach(renderRecipe)
+    tours.slice(start, end).forEach(rendertour)
 
     // render pagination buttons
-    renderButtons(page, recipes.length, resPerPage)
+    renderButtons(page, tours.length, resPerPage)
 }
