@@ -268,7 +268,7 @@ Crearemos una página web que contenga una barra de búsqueda, utilizando nuestr
 
 
 
-# Sesión 4: NodeJS y Arquitectura
+# Sesión 4: NodeJS & Arquitectura
 
 ## ALCANCE 13: Instalamos Node.js
 
