@@ -83,7 +83,7 @@ Te pedimos que instales los siguientes programas:
 - [Git](https://git-scm.com/downloads). Para controlar las versiones y subir nuestros cambios a GitHub.
 - [GitHub](https://github.com.com/). Crea tu cuenta en caso de que no lo hayas hecho.
 
-## Objetivos
+## **Objetivos**
 
 Crearemos un archivo con una función que verifique tours.
 
