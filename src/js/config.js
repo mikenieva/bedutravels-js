@@ -1,1 +1,0 @@
-export const key = '2a8c42073244c42cef565d2733d281f1'
