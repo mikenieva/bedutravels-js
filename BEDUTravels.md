@@ -116,13 +116,15 @@ git remote add origin https://github.com/[TU-USUARIO-DE-GITHUB]/bedutravels-js.g
 git pull origin master
 ```
 
-- Verás un único archivo, que será un `README.md`
+- Verás un archivo, que será un `README.md` y un archivo `.gitignore`
 
 ## ALCANCE 1: Diseñemos el arreglo de objetos "tours"
 
-- Dentro del proyecto, crea un archivo llamado `tours.js`
+- Dentro del proyecto, crearás dos archivos:
+  - `index.html`
+  - `index.js`
 
-- En este archivo, crea una constante `toursMEX` y asígnale un arreglo de objetos que cumpla con las siguientes propiedades:
+- En `index.js`, crea una variable llamada `toursMEX` y asígnale un arreglo de objetos que cumpla con las siguientes propiedades:
 
 ```javascript
 id: Number
@@ -310,7 +312,49 @@ npm --version
 Si el retorno es un número, significa que ya está listo tu sistema.
 
 
+- Entraremos a la termianl y escribiremos:
+
+```shell
+npm init
+```
+
+
+
 ## ALCANCE 14: Configuremos Webpack y Babel
+
+
+```javascript
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+    entry: ['@babel/polyfill','./src/js/index.js'],
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/bundle.js'
+    },
+    devServer: {
+        contentBase: './dist',
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/index.html'
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    }
+}
+```
 
 
 ## ALCANCE 15: Javascript compilando con Webpack
