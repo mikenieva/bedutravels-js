@@ -481,7 +481,7 @@ outline: none;
   width: 2.75rem;
   fill: #fff;
 }
-.tour__ingredients {
+.tour__resources {
   padding: 4rem 5rem;
   font-size: 1.5rem;
   line-height: 1.4;
@@ -494,7 +494,7 @@ outline: none;
   list-style: none;
   margin-bottom: 3rem;
 }
-.tour__ingredient-list {
+.tour__resource-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: 1.5rem;

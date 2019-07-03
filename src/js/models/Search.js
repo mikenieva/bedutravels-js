@@ -13,7 +13,7 @@ export default class Search {
             const res = await axios(`./data/${pais}.json`)
             this.result = res.data
         } catch (error){
-            console.log("Try again")
+            console.log("Intenta nuevamente")
         }
     }
 }

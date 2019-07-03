@@ -31,18 +31,6 @@ const rendertour = tour => {
     elements.searchReslist.insertAdjacentHTML('beforeend', markup)
 }
 
-export const getInput = () => elements.searchInput.value
-
-export const clearInput = () => {
-    elements.searchInput.value = ''
-}
-
-export const clearResults = () => {
-    elements.searchReslist.innerHTML = '';
-    elements.searchResPages.innerHTML = '';
-}
-
-// type: prev or next
 const createButton = (page, type) => `
     <button class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page -1 : page +1}>
     <span>Página ${type === "prev" ? page - 1 : page + 1}</span>
@@ -66,16 +54,13 @@ const renderButtons = (page, numResults, resPerPage) => {
     
     let button;
     if(page === 1 && pages > 1) {
-        // Only button to go to next page
         button = createButton(page, 'next')
     } else if(page < pages) {
-        // Both Buttons
         button = `
             ${button = createButton(page, 'prev')}
             ${button = createButton(page, 'next')}
         `
     } else if (page === pages && pages > 1){
-        // Only button to go to prev page
         button = createButton(page, 'prev')
     } else {
         button = createMessage()
@@ -86,13 +71,21 @@ const renderButtons = (page, numResults, resPerPage) => {
 }
 
 export const renderResults = (tours, page = 1, resPerPage = 5) => {
-    console.log(tours)
-    // render results of current page
     const start = (page - 1) * resPerPage
     const end = page * resPerPage
 
     tours.slice(start, end).forEach(rendertour)
 
-    // render pagination buttons
     renderButtons(page, tours.length, resPerPage)
+}
+
+export const getInput = () => elements.searchInput.value
+
+export const clearInput = () => {
+    elements.searchInput.value = ''
+}
+
+export const clearResults = () => {
+    elements.searchReslist.innerHTML = '';
+    elements.searchResPages.innerHTML = '';
 }

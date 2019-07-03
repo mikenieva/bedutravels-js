@@ -66,14 +66,14 @@ export const rendertour = (tour) => {
             </div>
         </div>
 
-        <div class="tour__ingredients">
-        <ul class="tour__ingredient-list">
+        <div class="tour__resources">
+        <ul class="tour__resource-list">
             <h2>¿Qué incluye?</h2>
             <li class="tour__item" style="">
                 <svg class="tour__icon">
                     <use href="img/icons.svg#icon-check"></use>
                 </svg>
-                <div class="tour__ingredient">
+                <div class="tour__resource">
                         <span class="tour__unit">Acomodación: ${tour.acomodacion  ? "Incluida" : "No incluida"}</span>
                     </div>
                 </li>  
@@ -81,7 +81,7 @@ export const rendertour = (tour) => {
                     <svg class="tour__icon">
                         <use href="img/icons.svg#icon-check"></use>
                     </svg>
-                    <div class="tour__ingredient">
+                    <div class="tour__resource">
                         <span class="tour__unit">Transporte: ${tour.transporte ? "Incluido" : "No Incluido"}</span>
                     </div>
                 </li>
@@ -90,7 +90,7 @@ export const rendertour = (tour) => {
                     <svg class="tour__icon">
                         <use href="img/icons.svg#icon-check"></use>
                     </svg>
-                    <div class="tour__ingredient">
+                    <div class="tour__resource">
                         <span class="tour__unit">${tour.duracionTour} ${tour.duracionTour === 1 ? "Día" : "Días"} de Viaje</span>
                     </div>
                 </li>
@@ -99,18 +99,18 @@ export const rendertour = (tour) => {
                     <svg class="tour__icon">
                         <use href="img/icons.svg#icon-check"></use>
                     </svg>
-                    <div class="tour__ingredient">
+                    <div class="tour__resource">
                         <span class="tour__unit">${tour.tipoDeTour}</span>
                     </div>
                 </li>
         </ul>
-        <ul class="tour__ingredient-list">
+        <ul class="tour__resource-list">
                         <h2>Requisitos</h2>
                         <li class="tour__item">
                         <svg class="tour__icon">
                             <use href="img/icons.svg#icon-check"></use>
                         </svg>
-                        <div class="tour__ingredient">
+                        <div class="tour__resource">
                         <span class="tour__unit">Edad Mínima: ${tour.edadMinima}</span>
                     </div>
                 </li>
@@ -118,7 +118,7 @@ export const rendertour = (tour) => {
                             <svg class="tour__icon">
                                 <use href="img/icons.svg#icon-check"></use>
                             </svg>
-                            <div class="tour__ingredient">
+                            <div class="tour__resource">
                                 <span class="tour__unit">Seguro de Viaje: ${tour.requisitos.seguroDeViaje ? "Incluido" : "No incluido"}</span>   
                             </div>
                         </li>
@@ -155,14 +155,14 @@ export const rendertour = (tour) => {
   elements.tour.insertAdjacentHTML("afterbegin", markup);
 };
 
-export const updateServingsIngredients = tour => {
+export const updateServingsresources = tour => {
 
 document.querySelector(".tour__info-data--people").textContent =
     tour.servings;
 
 const countElements = Array.from(document.querySelectorAll(".tour__count"));
     countElements.forEach((el, i) => {
-        el.textContent = formatCount(tour.ingredients[i].count);
+        el.textContent = formatCount(tour.resources[i].count);
     });
 };
 
